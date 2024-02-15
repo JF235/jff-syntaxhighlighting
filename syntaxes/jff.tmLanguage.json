@@ -1,0 +1,60 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "jff",
+	"patterns": [
+		{
+			"include": "#figure"
+		},
+		{
+			"include": "#bold"
+		},
+		{
+			"include": "#italic"
+		},
+		{
+			"include": "#numbered_math"
+		},
+		{
+			"include": "#display_math"
+		},
+		{
+			"include": "#inline_math"
+		},
+		{
+			"include": "#header"
+		}
+		
+	],
+	"repository": {
+		"header": {
+			"name": "markup.heading.jff",
+			"match": "^#{1,3} (.+)$"
+		},
+		"bold": {
+			"name": "markup.bold.jff",
+			"match": "\\*\\*(.*?)\\*\\*"
+		},
+		"italic": {
+			"name": "markup.italic.jff",
+			"match": "\\*(.*?)\\*"
+		},
+		"display_math": {
+			"name": "keyword.math.display.jff",
+			"match": "(?<=[ ]|^|[(])\\$\\$(.+?)\\$\\$"
+		},
+		"inline_math": {
+			"name": "keyword.math.inline.jff",
+			"match": "(?<=[ ]|^|[(])\\$(.+?)\\$"
+		},
+		"numbered_math": {
+			"name": "keyword.math.numbered.jff",
+			"match": "(?<=[ ]|^)\\\\\\[(.+?)\\\\\\](?:\\\\label{(.+?)})?"
+		},
+		"figure": {
+			"name": "string.xml.figure.jff",
+			"match": "(<fig(?:ure)? src=\"(.+?)\"(?: (.+?)=\"(.+?)\")*>$)(?:^<caption>(.+?)</caption>)?"
+		}
+		
+	},
+	"scopeName": "source.jff"
+}

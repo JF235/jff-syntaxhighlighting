@@ -1,0 +1,25 @@
+{
+  "name": "jff-syntaxhighlighting",
+  "displayName": "JFF-SyntaxHighlighting",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "jff",
+      "aliases": ["jff", "jff"],
+      "extensions": [".jff"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "jff",
+      "scopeName": "source.jff",
+      "path": "./syntaxes/jff.tmLanguage.json"
+    }]
+  }
+}
